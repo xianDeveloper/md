@@ -4,8 +4,15 @@
 
    **JPDA_ADDRESS=”5055”**，默认为8000。启动tomcat时，用 **./catalina.sh jpda start** 代替原本的 **./startup.sh** 来启动，然后在Intellij 里面做如下配置：
 
+   ```bash
+-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5055
+   host: 192.168.1.191 port: 5055
+   ```
+   
+   
+   
    <img src="C:\Users\54888\Desktop\remote debug1.png" alt="remote debug1" style="zoom:75%;" />
-
+   
    服务端 用  下面命令启动
 
 ```bash
