@@ -1,0 +1,34 @@
+# mybatis plus
+
+## 1.配置
+
+## 2.问题积累
+
+### 分页
+
+- PageHelper使用ORDER BY以及分页问题
+
+  开源分页插件PageHelper的时候，发现两个问题
+
+  1. 发现数据有重复，即第一页的数据在第二页同样出现，总数是正确的；
+
+     解决办法： 
+
+     ​	sql语句是有ORDER BY 语句，发现是因为ORDER BY的字段是时间的问题，MySQL的timestamp精确到秒，而我的记录是批量插入的，都是同一秒，时间是相同的，所以会出现这种问题，解决办法是ORDER BY的字段要尽可能不一样。如果要精确，可以指定字段：
+
+  2. 只有两页的情况下，获取第三页也有数据，且是第二页的数据；
+
+     解决办法：
+
+     ```yaml
+     pagehelper:
+       helperDialect: mysql
+       reasonable: false
+       supportMethodsArguments: true
+       params: count=countSql
+     ```
+
+     ​	`reasonable: true`会出现问题2，改成false即可，当 `reasonable: true`的时候，`pageNo<1`的时候会返回第一页，`pageNo>最大页`的时候会返回最后一页。
+
+  3. 
+
