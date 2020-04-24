@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<updateFiles>
+  <file path="zb\lib\HOSI4403011.dll" url="http://192.168.1.107:10000/update/HOSI4403011.dll" lastver="1.00.1" size="28672" needRestart="true" />
+  <file path="zb\lib\Common.dll" url="http://192.168.1.107:10000/update/Common.dll" lastver="1.00.1" size="28672" needRestart="true" />
+  <file path="7.pdf" url="http://192.168.1.107:10000/update/7.pdf" lastver="1.00.5" size="28672" needRestart="true" />
+  <file path="Common.dll" url="http://192.168.1.107:10000/update/Common.dll" lastver="1.00.1" size="28672" needRestart="true" />
+  <file path="xls.rar" url="http://localhost:1992/update/xls.rar" lastver="1.00.1" size="2668" needRestart="true" />
+  <file path="iis调用dll.txt" url="http://localhost:1992/update/iis调用dll.txt" lastver="1.00.1" size="2668" needRestart="true" />
+  <file path="printer.ico" url="http://localhost:1992/update/printer.ico" lastver="1.00.1" size="2668" needRestart="true" />
+  <file path="比特币原理.txt" url="http://localhost:1992/update/比特币原理.txt" lastver="1.00.2" size="2668" needRestart="true" />
+  <file path="report\20180521更新.zip" url="http://localhost:1992/update/report\20180521更新.zip" lastver="1.00.1" size="2668" needRestart="true" />
+  <file path="report\更新02.zip" url="http://localhost:1992/update/更新02.zip" lastver="1.00.1" size="2668" needRestart="true" />
+  <file path="更新0516.zip" url="http://localhost:1992/update/更新0516.zip" lastver="1.00.2" size="2668" needRestart="true" />
+  <file path="更新02.zip" url="http://localhost:1992/update/更新02.zip" lastver="1.00.2" size="2668" needRestart="true" />
+  <file path="log\比特币原理.txt" url="http://localhost:1992/update/比特币原理.txt" lastver="1.00.1" size="2668" needRestart="true" />
+  <file path="report\test.txt" url="http://localhost:1992/update/test.txt" lastver="1.00.3" size="2668" needRestart="true" />
+  <file path="" url="http://192.168.1.65:11889/update/" lastver="1.00.1" size="2668" needRestart="true" />
+  <file path="ak47\屏幕截图(1).png" url="http://192.168.1.65:11889/update/屏幕截图(1).png" lastver="1.00.3" size="2668" needRestart="true" />
+  <file path="ak47\屏幕截图(2).png" url="http://192.168.1.65:11889/update/屏幕截图(2).png" lastver="1.00.2" size="2668" needRestart="true" />
+  <file path="ak47\Capture001.png" url="http://192.168.1.65:11889/update/Capture001.png" lastver="1.00.1" size="2668" needRestart="true" />
+</updateFiles>

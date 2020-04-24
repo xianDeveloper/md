@@ -31,6 +31,20 @@
 
 ## springboot 远程调试
 
+- 服务端启动
+
+  ```bash
+  java -jar -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 operationplatform-0.0.1-SNAPSHOT.war
+  ```
+
+- 客户端配置
+
+  ```bash
+  -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000
+  ```
+
+  ![image](E:\doc\学习积累\md\java\debug\springboot-idea-debug.png)
+
 ## dubbo 远程调试
 
 - 由于Dubbo的特性是远程调用，因此正常来说无法在本地进行debug
@@ -43,26 +57,32 @@
 
 - 远程debug
 
-  - 假设有2台机器，一台机器是本地平常写代码的机器，另一台是服务器，专门运行dubbo
+  - 服务器配置
 
-  - 首先在dubbo运行的服务器上运行以下指令
+    假设有2台机器，一台机器是本地平常写代码的机器，另一台是服务器，专门运行dubbo
 
-    - 100.80.169.72是本地写代码的机器的ip
+    首先在dubbo运行的服务器上运行以下指令
 
-    - 9097是指将dubbo服务透过socket转发出来的端口 (9097可以换，只要跟idea的配置一致就可以)
+    - 100.80.169.72 是本地写代码的机器的ip
 
-  - socat TCP4-LISTEN:9097,fork,range=100.80.169.72/32 TCP4:127.0.0.1:9015
-    在本地机器上的idea进行配置
+    - 9097 是指将dubbo服务透过socket转发出来的端口 (9097可以换，只要跟idea的配置一致就可以)
 
-  - 新增一个remote连接
+    ```bash
+    socat TCP4-LISTEN:9097,fork,range=100.80.169.72/32 TCP4:127.0.0.1:9015在
+    
+    ```
+
+  - 本地机器上的idea进行配置
+
+    - 新增一个remote连接
 
     ![](E:\doc\学习积累\md\java\debug\dubbo.png)
 
-  - 将Host设为dubbo服务器的ip，Port设为9097 (只要和TCP-LISTEN的端口一致即可)
+    - 将Host设为dubbo服务器的ip，Port设为9097 (只要和TCP-LISTEN的端口一致即可)
 
     ![dubbo-idea](E:\doc\学习积累\md\java\debug\dubbo-idea.png)
 
-  - 如此就可以在本地的dubbo代码上打断点，这个断点位置会透过socket传到远程dubbo服务器上，因此我们就可以在本地对远程的dubbo代码进行debug
+    - 如此就可以在本地的dubbo代码上打断点，这个断点位置会透过socket传到远程dubbo服务器上，因此我们就可以在本地对远程的dubbo代码进行debug
 
 - 
 

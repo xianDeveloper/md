@@ -105,5 +105,68 @@
 
    
 
-10. 
+10. find命令
+
+    find命令用于查找文件。
+
+    按文件名字查找：
+
+    ```bash
+    wang@wang:~/workpalce/python$ sudo find / -name "create.txt"
+    /home/wang/workpalce/python/create.txt
+    ```
+
+    按文件大小查找：
+
+    ```bash
+    wang@wang:~/workpalce/python$ sudo find / -size +100M
+    /usr/lib/i386-linux-gnu/libOxideQtCore.so.0
+    /sys/devices/pci0000:00/0000:00:0f.0/resource1_wc
+    /sys/devices/pci0000:00/0000:00:0f.0/resource1
+    /proc/kcore
+    ```
+
+    按文件权限查找：
+
+    ```bash
+    wang@wang:~/workpalce/python$ find . -perm 664
+    ./create.txt
+    ```
+
+     按文件类型查找：
+
+    ```bash
+    wang@wang:~/workpalce/python$ find . -type f
+    ./1.txt
+    ./3.txt
+    ./2.txt
+    ./n.tar
+    ```
+
+    类型参数列表： f 普通文件 l 符号连接 d 目录 c 字符设备 b 块设备 s 套接字 p Fifo
+
+    按文件时间查找：
+
+    Linux文件系统每个文件都有三种时间戳： 访问时间（-atime/天，-amin/分钟）：用户最近一次访问时间。
+
+    ​                                                                 修改时间（-mtime/天，-mmin/分钟）：文件最后一次修改时间。
+
+    ​                                                                 变化时间（-ctime/天，-cmin/分钟）：文件数据元（例如权限等）最后一次修改时间。
+
+    ```bash
+    wang@wang:~/workpalce/python$ find . -atime -7   # 七天内访问过的文件
+    .
+    ./1.txt
+    ./3.txt
+    ./2.txt
+    ./n.tar
+    wang@wang:~/workpalce/python$ find . -atime 7    # 恰好在七天前被访问过的文件
+    wang@wang:~/workpalce/python$ find . -atime +7   # 超过在七天内被访问过的文件
+    ```
+
+    二、借助-exec选项与其他命令结合使用
+
+    ```bash
+    wang@wang:~/workpalce/python$ find dir -name "*.txt" -exec cp {} . \;
+    ```
 
