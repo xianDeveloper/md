@@ -222,7 +222,7 @@
 
     ```
     sync
-    echo 1 > /proc/sys/vm/drop_cachesdrop_caches
+    echo 1 > /proc/sys/vm/drop_caches
     ```
 
     ****的值可以是0-3之间的数字，代表不同的含义：**
